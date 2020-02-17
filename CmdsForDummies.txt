@@ -1,0 +1,47 @@
+To start the venv, navigate to the top level of the directory:
+venv\Scrips\activate
+
+To start the flask app:
+flask run
+
+To run the flask shell for testing:
+flask shell
+
+To initialize the database:
+flask db init
+
+To start the python environment for testing:
+python
+
+Generate auto migrations based on current db schema:
+flask db migrate
+-Optionally:
+flask db migrate -m "short comment"
+*Note: These commands do not change db, just create migrations
+
+Apply migration changes:
+flask db upgrade
+
+Undo last migration:
+flask db downgrade
+
+Python commands:
+-db.session.add(<obj>)
+-db.session.reollback() --Clears current session prior to commiting
+-db.session.commit()
+-<Model>.query  --Queries database with commands like all()
+
+MySql:
+cd C:\xampp\mysql\bin
+mysql -h localhost -u root --password
+
+SHOW DATABSES;
+USE <db_name>;
+SHOW TABLES;
+DESCRIBE <table_name>;
+
+Adding a user to the db using flask shell:
+>>> u = User(username='susan', email='susan@example.com')
+>>> u.set_password('cat')
+>>> db.session.add(u)
+>>> db.session.commit()
