@@ -8,7 +8,7 @@ import unittest
 class UserModelCase(unittest.TestCase):
 
     def setUp(self):
-        self.good_user = User(username=Config.good_test_user, password=Config.good_test_password)
+        self.good_user = User(username='', password='')
         db.session.add(self.good_user)
         db.session.commit()
         pass
